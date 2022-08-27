@@ -1,0 +1,56 @@
+
+/* Start Navbar */ 
+
+.navbar {
+  margin-bottom: 0px !important;
+  background: linear-gradient(left, $main-color, $red-color);
+  border-radius: 0px !important;
+  &:hover {
+    background: linear-gradient(right, $main-color, $red-color);
+  }
+  .navbar-header {
+    button {
+      background-color: $other-color;
+      span {
+        background-color: $main-color;
+      }
+    }
+    a {
+      color: $other-color;
+      font-weight: bold;
+      font-size: 24px;
+    }
+  }
+  .navbar-collapse {
+    ul.nav {
+      margin-right: 0px;
+      li {
+        margin: 0px 2px;
+        @media (max-width: 767px) {
+          margin: 2px 0px;
+        }
+        &:hover {
+          background-color: $other-color;
+          color: $main-color;
+        }
+        a {
+          color: $other-color;
+          font-weight: bold;
+          font-size: 22px;
+          &:hover {
+            // background-color: $other-color;
+            color: $main-color;
+          }
+        }
+        &.active {
+          a {
+            background-color: $other-color;
+            color: $main-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* End Navbar */

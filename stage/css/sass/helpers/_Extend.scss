@@ -1,0 +1,245 @@
+
+.head-border {
+  &:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: $main-color;
+    color: $main-color;
+    margin: 25px auto;
+    margin-bottom: 40px;
+  }
+}
+
+%transition {
+  @include prefixer (transition, all .5s ease-in-out, webkit moz o);
+}
+
+.activee {
+  display: block !important;
+}
+
+.opactiy {
+  opacity: 0.5;
+}
+
+
+/* imges comparison slider */
+
+
+.cox {
+  margin: 0 auto 30px;
+  min-height: 600px;
+  display: block;
+  width: 600px;
+  @media (max-width: 767px) {
+    width: 410px;
+    min-height: 525px;
+  }
+  .cd-image-container {
+    position: relative;
+    height: 600px;
+    width: 80%;
+    // max-width: 768px;
+    margin: 0em auto;
+    @media (max-width: 767px) {
+      height: 440px;
+      margin: 0px;
+    }
+    img {
+      // width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .cd-image-label {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      color: $main-color;
+      padding: 1em;
+      font-weight: bold;
+      font-size: 18px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      opacity: 0;
+      -webkit-transform: translateY(20px);
+      -moz-transform: translateY(20px);
+      -ms-transform: translateY(20px);
+      -o-transform: translateY(20px);
+      transform: translateY(20px);
+      -webkit-transition: -webkit-transform 0.3s 0.7s, opacity 0.3s 0.7s;
+      -moz-transition: -moz-transform 0.3s 0.7s, opacity 0.3s 0.7s;
+      transition: transform 0.3s 0.7s, opacity 0.3s 0.7s;
+    }
+    .cd-resize-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+      -webkit-transform: translateZ(0);
+      -moz-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+      -o-transform: translateZ(0);
+      transform: translateZ(0);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        height: 100%;
+        // width: 560px;
+        max-width: none;
+        &.fool {
+          @media (max-width: 767px) {
+            width: 360px;
+          }
+        }
+        &.stuped {
+          @media (max-width: 767px) {
+            width: 310px;
+          }
+        }
+      }
+      .cd-image-label {
+        right: auto;
+        left: 0;
+        color: $main-color;
+      }
+    }
+    .cd-handle {
+      position: absolute;
+      height: 44px;
+      width: 44px;
+      /* center the element */
+      left: 50%;
+      top: 50%;
+      margin-left: -22px;
+      margin-top: -22px;
+      border-radius: 50%;
+      background: $main-color url("../img/cd-arrows.svg") no-repeat center center;
+      cursor: ew-resize;
+      box-shadow: 0 0 0 6px $sub-color, 0 0 10px $sub-color, inset 0 1px 0 $sub-color;
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0) scale(0);
+      -moz-transform: translate3d(0, 0, 0) scale(0);
+      -ms-transform: translate3d(0, 0, 0) scale(0);
+      -o-transform: translate3d(0, 0, 0) scale(0);
+      transform: translate3d(0, 0, 0) scale(0);
+      &:before {
+        content: "\21d4";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 2em;
+        height: 2em;
+        padding: 5px;
+        border-radius: 100%;
+        background-clip: content-box;
+        background-color: #e41749;
+        color: #fff;
+        text-align: center;
+        line-height: 1.5em;
+        font-size: 30px;
+      }
+    }
+  }
+  .result {
+    width: 80%;
+    background-color: $sub-color;
+    text-align: center;
+    padding: 15px 0px 10px;
+    margin: 0 auto;
+    @media (max-width: 767px) {
+      margin: 0px;
+    }
+    h4 {
+      font-weight: bold;
+    }
+    p {
+      font-size: 18px;
+      color: $other-color;
+    }
+  }
+}
+
+
+.cox .cd-image-label.is-hidden {
+  visibility: hidden;
+}
+
+
+.cox .is-visible .cd-image-label {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.cox .is-visible .cd-resize-img {
+  width: 50%;
+  -webkit-animation: cd-bounce-in 0.7s;
+  -moz-animation: cd-bounce-in 0.7s;
+  animation: cd-bounce-in 0.7s;
+}
+
+
+
+.cox .is-visible .cd-handle {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0) scale(1);
+  -moz-transform: translate3d(0, 0, 0) scale(1);
+  -ms-transform: translate3d(0, 0, 0) scale(1);
+  -o-transform: translate3d(0, 0, 0) scale(1);
+  transform: translate3d(0, 0, 0) scale(1);
+  -webkit-transition: -webkit-transform 0.3s 0.7s, opacity 0s 0.7s;
+  -moz-transition: -moz-transform 0.3s 0.7s, opacity 0s 0.7s;
+  transition: transform 0.3s 0.7s, opacity 0s 0.7s;
+}
+
+
+/* animation imges comparesion slider */ 
+
+
+@-webkit-keyframes cd-bounce-in {
+  0% {
+    width: 0;
+  }
+  60% {
+    width: 55%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+@-moz-keyframes cd-bounce-in {
+  0% {
+    width: 0;
+  }
+  60% {
+    width: 55%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+@keyframes cd-bounce-in {
+  0% {
+    width: 0;
+  }
+  60% {
+    width: 55%;
+  }
+  100% {
+    width: 50%;
+  }
+}

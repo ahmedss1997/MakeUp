@@ -1,0 +1,9 @@
+
+* {
+  @include prefixer(box-sizing, border-box, webkit moz);
+}
+
+.clearfix {
+  clear: both;
+}
+

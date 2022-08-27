@@ -1,0 +1,27 @@
+
+.footer {
+  width: auto;
+  height: auto;
+  padding: 25px;
+  text-align: center;
+  background-color: $sub-color;
+  color: $other-color;
+  span {
+    font-size: 19px;
+  }
+  a {
+    float: right;
+    text-decoration: none;
+    font-size: 18px;
+    margin-right: 60px;
+    color: $other-color;
+    &:hover {
+      text-decoration: none;
+      color: $main-color;
+    }
+    @media (max-width: 767px) {
+      margin-right: 40px;
+    }
+  }
+}
+

@@ -1,0 +1,38 @@
+
+
+
+
+// Start Carousel
+.header
+  .overlay
+    #mySlider.carousel.slide(data-ride='carousel')
+      ol.carousel-indicators.hidden-xs
+        li.active(data-target='#mySlider' data-slide-to='0')
+        li(data-target='#mySlider' data-slide-to='1')
+        li(data-target='#mySlider' data-slide-to='2')
+      // Wrapper for slides
+      .carousel-inner
+        .item.active
+          img(src='imges/herb.jpg' alt='')
+          .carousel-caption.hidden-xs
+            //- h2.h1 Herb Gold
+            //- p.lead الحل الآمن والصحى للبشرة ( Herb Gold ) المنتج الأقوى لإزالة تجاعيد البشرة
+            //- button.hvr-float-shadow Shop Now
+        .item
+          img(src='imges/essence.jpg' alt='')
+          .carousel-caption.hidden-xs
+            //- h2.h1 Herb Gold
+            //- p.lead الحل الآمن والصحى للبشرة ( Herb Gold ) المنتج الأقوى لإزالة تجاعيد البشرة
+            //- button.hvr-float-shadow Shop Now
+        .item
+          img(src='imges/herb-gold.jpg' alt='')
+          .carousel-caption.hidden-xs
+            //- h2.h1 Herb Gold
+            //- p.lead الحل الآمن والصحى للبشرة ( Herb Gold ) المنتج الأقوى لإزالة تجاعيد البشرة
+            //- button.hvr-float-shadow Shop Now
+      // Controls
+      a.left.carousel-control(href='#mySlider' role='button' data-slide='prev')
+        span.glyphicon.glyphicon-chevron-left
+      a.right.carousel-control(href='#mySlider' role='button' data-slide='next')
+        span.glyphicon.glyphicon-chevron-right
+// End Carousel

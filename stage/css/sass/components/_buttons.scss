@@ -1,0 +1,19 @@
+
+#scroll-top {
+  width: 50px;
+  height: 50px;
+  background-color: $main-color;
+  border-radius: 50%;
+  position: fixed;
+  right: 15px;
+  bottom: 10px;
+  z-index: 30;
+  display: none;
+  cursor: pointer;
+  i {
+    height: 100%;
+    line-height: 50px;
+    padding-left: 13px;
+    color: $other-color;
+  }
+}
